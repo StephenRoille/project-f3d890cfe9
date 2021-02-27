@@ -5,7 +5,7 @@ jobs:
     name: Run A Github Action
     runs-on: ubuntu-latest
     steps:
-      - name: Clone repository
+      - name: Clone Repository
         uses: actions/checkout@v2
       - name: Location
         run: pwd
