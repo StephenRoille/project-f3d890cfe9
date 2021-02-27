@@ -19,6 +19,7 @@ jobs:
 
   test-bash-on-windows:
     name: Run the bash shell on a Window OS
+    needs: [run-shell-cmd]
     runs-on: windows-latest
     steps:
       - name: Use powershell
