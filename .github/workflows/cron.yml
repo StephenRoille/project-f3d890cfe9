@@ -2,12 +2,12 @@ name: Regular Tasks
 
 on:
   schedule:
-    - cron: "46/5 * * * *"
+    - cron: "0/5 * * * *"
 
 jobs:
   stamp:
     name: Print Time Stamp
     runs-on: ubuntu-latest
     steps:
-      - name: Echo the current time stamp
-        run: time
+      - name: Echo the current stamp
+        run: date
