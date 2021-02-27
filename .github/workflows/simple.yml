@@ -16,3 +16,13 @@ jobs:
           import platform
           print(platform.processor())
         shell: python
+
+  test-bash-on-windows:
+    name: Run the bash shell on a Window OS
+    runs-on: windows-latest
+    steps:
+      - name: Use powershell
+        run: Get-Location
+      - name: Use Bash
+        run: pwd
+        shell: bash
