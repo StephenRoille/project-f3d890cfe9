@@ -1,0 +1,12 @@
+name: Dispatching
+on:
+  workflow_dispatch:
+    types: [build]
+
+jobs:
+  echo:
+    name: Print Date
+    runs-on: ubuntu-latest
+    steps:
+      - name: Date
+        run: date
