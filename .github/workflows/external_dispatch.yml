@@ -10,3 +10,5 @@ jobs:
     steps:
       - name: Date
         run: date
+      - name: Access External Payload
+        run: echo "${{ github.event.client_payload }}""
