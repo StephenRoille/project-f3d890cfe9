@@ -4,17 +4,18 @@ jobs:
   node-version:
     strategy:
       matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
         node-version: [8, 10, 12]
       fail-fast: true
       max-parallel: 2
-    name: Print Node.js Version Before Install
-    runs-on: ubuntu-latest
+    name: Print Node.js Version on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
     steps:
-      - name: Log Node version
+      - name: Log Node Version Before Install on ${{ matrix.os }}
         run: node -v
       - name: install node
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Log Node Version ${{ matrix.node-version }} After Install
+      - name: Log Node Version ${{ matrix.node-version }} After Install on ${{ matrix.os }}
         run: node -v
