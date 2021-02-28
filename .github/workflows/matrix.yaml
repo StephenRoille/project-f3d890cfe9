@@ -2,7 +2,12 @@ name: NodeJS Matrix
 on: [push]
 jobs:
   node-version:
-    name: Print Node.js version
+    strategy:
+      matrix:
+        node-version: [8, 10, 12]
+      fail-fast: true
+      max-parallel: 2
+    name: Print Node.js Version Before Install
     runs-on: ubuntu-latest
     steps:
       - name: Log Node version
@@ -10,6 +15,6 @@ jobs:
       - name: install node
         uses: actions/setup-node@v1
         with:
-          node-version: 6
-      - name: Log Node version After Re-Install
+          node-version: ${{ matrix.node-version }}
+      - name: Log Node Version ${{ matrix.node-version }} After Install
         run: node -v
