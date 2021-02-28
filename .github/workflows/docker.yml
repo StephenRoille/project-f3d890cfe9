@@ -1,0 +1,20 @@
+name: Docker
+on: push
+jobs:
+  node-docker:
+    name: Run Node within Docker
+    runs-on: ubuntu-latest
+    container: 
+      image: node:13.5.0-alpine3.10
+      # env:
+      # ports:
+      # options:
+      # volumes:
+    steps:
+      - name: Log Nodejs version
+        run: |
+          node -v
+          cat /etc/os-release
+      
+
+
