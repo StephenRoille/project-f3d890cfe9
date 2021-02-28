@@ -1,0 +1,15 @@
+name: NodeJS Matrix
+on: [push]
+jobs:
+  node-version:
+    name: Print Node.js version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log Node version
+        run: node -v
+      - name: install node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 6
+      - name: Log Node version After Re-Install
+        run: node -v
